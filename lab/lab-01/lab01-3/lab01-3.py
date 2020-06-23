@@ -6,7 +6,7 @@ def readfile(sourcefile):
         data = dataSource.read()
     return data
 
-#write txt file from data
+#write c file from data
 def writefile(data):
     with open('ouputLab01-3.c','w') as datafile:
         cfile = '#include<stdio.h>\n\

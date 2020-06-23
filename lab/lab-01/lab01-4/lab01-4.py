@@ -1,4 +1,4 @@
-#this lab is reading the .src file and export data to a python file. Next show output from python file.
+#this lab is reading the .src file and export data to a python file. Next show output from C++ file.
 
 #read src file from location and return data in file as data variable
 def readfile(sourcefile):
@@ -6,11 +6,15 @@ def readfile(sourcefile):
         data = dataSource.read()
     return data
 
-#write py file from data
+#write cpp file from data
 def writefile(data):
-    with open('ouputLab01-2.py','w') as datafile:
-        pyfile = 'print("'+data+'")'
-        return datafile.write(pyfile)
+    with open('ouputLab01-4.cpp','w') as datafile:
+        cppfile = '#include<iostream>\n\
+        using namespace std;\n\
+        int main() {\n\
+            cout <<"'+data+'";\n\
+            return 0;\n}'
+        return datafile.write(cppfile)
 
 def main():
     print('input file')
