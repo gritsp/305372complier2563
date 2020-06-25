@@ -15,21 +15,24 @@ def analyzeData(data):
         else:            
             return "Error! Data is out of range."
                
-    return "Done"
+    return True
 
-def writefile(data,result):
-    if result=="Done":        
-        with open('ouputLab02.src','w') as datafile:
-            for i in data:
-                datafile.write(i)
-    return result
+def writefile(data):
+         
+    with open('ouputLab02.src','w') as datafile:
+        for i in data:
+            datafile.write(i)
+    return 'Done'
 
 def main():
     print('input file')
     source = input('>')
     data = readfile(source)
     result = analyzeData(data)
-    print(writefile(data,result))
+    if result==True:
+        print(writefile(data))
+    else:
+        print(result)
     
 
 if __name__ == "__main__":
